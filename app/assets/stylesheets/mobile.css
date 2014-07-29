@@ -53,7 +53,11 @@ header  #first {
 
 }
 
-@media (max-width : 460px){
+/*@media(max-width: 700px){
+
+}*/
+
+@media (max-width : 700px){
   header .navigation   .left-col, header .navigation .lower-menu .right-col {
     width: 0%;
   }
@@ -98,8 +102,10 @@ header  #first {
   }
 
   #active_map {
-    /*height: 70%;*/
-    /*position: absolute;*/
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
 
   header.navigation .left-col {
@@ -112,7 +118,7 @@ header  #first {
 
 }
 
-@media ( min-width : 460px ) {
+@media ( min-width : 700px ) {
   #mobile {
     display: none;
     position: relative;
