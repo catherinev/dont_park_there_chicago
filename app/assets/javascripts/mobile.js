@@ -1,7 +1,8 @@
 $(document).ready(function(){
 
   toggleListener();
-  // resizeMap();
+  resizeMap();
+  resizeListener();
 });
 
 function toggleListener(){
@@ -33,11 +34,26 @@ function toggleListener(){
 }
 
 function resizeMap(){
-
-
   if ($(window).width() <= 460){
     $('#active_map').css({
-      'height': ($(window).height() - 170) + 'px'
+      'height': ($(window).height() - 140) + 'px'
     })
   }
+  else if ($(window).width() <= 700){
+    $('#active_map').css({
+      'height': '75%'
+    })
+  }
+  else {
+    $('#active_map').css({
+      'height': '550px'
+    })
+  }
+}
+
+function resizeListener(){
+  $(window).resize(function(){
+    console.log("here")
+    resizeMap();
+  })
 }
