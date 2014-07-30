@@ -25,8 +25,16 @@
 
 <script>
   $(document).ready(function() {
-    placeFooter();
+    if ($(window).width() > 720){
+      placeFooter();
+    } else{
+      $(".footer-2").hide();
+    }
   });
 </script>
 
 <%= render 'refills/footer2' %>
+<button id= "toggle">&#x25B2</button>
+<div id = "mobile">
+
+</div>
