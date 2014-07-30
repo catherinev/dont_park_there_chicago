@@ -137,6 +137,15 @@ header  #first {
     padding: 0;
     margin: 0;
     width: 100px;
+    float: right;
+  }
+
+  .modal-inner {
+    height: 330px;
+  }
+
+  #forgotpw {
+    left: 6px;
   }
 
 }
