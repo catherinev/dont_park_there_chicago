@@ -57,12 +57,14 @@ header  #first {
 
 }*/
 
-@media (max-width : 700px){
+@media (max-width : 720px){
   header .navigation   .left-col, header .navigation .lower-menu .right-col {
     width: 0%;
   }
   header .navigation .lower-menu p  {
     width: 100%;
+    font-size: 0.9em;
+    padding: 0;
   }
 
   #toggle{
@@ -114,7 +116,7 @@ header  #first {
 
   #first {
     /*margin-top: -10%;*/
-    height: 70px;
+    height: 60px;
 
   }
 
