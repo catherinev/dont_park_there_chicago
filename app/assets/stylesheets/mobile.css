@@ -127,6 +127,10 @@ header  #first {
   body {
     margin-top: -20px;
   }
+  #range {
+    padding: 2em;
+    margin-bottom: 2em;
+  }
 
 
 }

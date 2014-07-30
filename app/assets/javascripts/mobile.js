@@ -7,28 +7,12 @@ $(document).ready(function(){
 
 function toggleListener(){
   $('#toggle').on('click', function(){
-    var $toggle = $(this),
-        $mobile = $('#mobile'),
-        mobileHeight = $mobile.height(),
-        windowHeight = $(window).height();
     
-    if ($mobile.css('display') === 'none'){
-      $mobile.css({
-        'display': 'block'
-      });
-      $toggle.html('&#x25BC')
-      $toggle.css({
-        'bottom': (mobileHeight) + 'px'
-      })
+    if ($('#mobile').css('display') === 'none'){
+      showTab();
     }
     else {
-      $mobile.css({
-        'display': 'none'
-      });
-      $toggle.html('&#x25B2')
-      $toggle.css({
-        'bottom': 0
-      })  
+      hideTab(); 
     }
   });
 }
@@ -38,11 +22,13 @@ function resizeMap(){
     $('#active_map').css({
       'height': ($(window).height() - 115) + 'px'
     })
+    moveRangeToMobile();
   }
   else if ($(window).width() <= 720){
     $('#active_map').css({
       'height': '75%'
     })
+    moveRangeToMobile();
   }
   else {
     $('#active_map').css({
@@ -53,7 +39,41 @@ function resizeMap(){
 
 function resizeListener(){
   $(window).resize(function(){
-    console.log("here")
     resizeMap();
+  })
+}
+
+function moveRangeToMobile(){
+  if ($("#range").length){
+    $('#range').appendTo('#mobile')
+    showTab();
+  }
+}
+
+function showTab(){
+  var $toggle = $('#toggle'),
+      $mobile = $('#mobile'),
+      mobileHeight = $mobile.height(),
+      windowHeight = $(window).height();
+  $mobile.css({
+    'display': 'block'
+  });
+  $toggle.html('&#x25BC')
+  $toggle.css({
+    'bottom': (mobileHeight) + 'px'
+  })
+}
+
+function hideTab(){
+  var $toggle = $('#toggle'),
+      $mobile = $('#mobile'),
+      mobileHeight = $mobile.height(),
+      windowHeight = $(window).height();
+  $mobile.css({
+    'display': 'none'
+  });
+  $toggle.html('&#x25B2')
+  $toggle.css({
+    'bottom': 0
   })
 }

@@ -15,6 +15,7 @@ function enterAddress() {
 function updateDateRange() {
   $('button.update_from_date').on('click', function() {
     active_map.off('click');
+    hideTab();
     $.post('/load_after_date_change', {date: getDateRange()}, function(response) {
       active_map.removeLayer(allMapElements);
       $('#map_script').remove();
